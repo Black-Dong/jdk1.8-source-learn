@@ -70,6 +70,7 @@ public interface Iterable<T> {
      * @since 1.8
      */
     default void forEach(Consumer<? super T> action) {
+        // 若action为空，抛出NullPointerException，不为空返回本身
         Objects.requireNonNull(action);
         for (T t : this) {
             action.accept(t);

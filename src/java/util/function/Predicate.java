@@ -116,4 +116,13 @@ public interface Predicate<T> {
                 ? Objects::isNull
                 : object -> targetRef.equals(object);
     }
+    /* 通过BiPredicate理解Predicate.isEqual
+    BiPredicate predicate = (targetRef, object) -> {
+        if (targetRef == null) {
+            return Objects.isNull(object);
+        } else {
+            return targetRef.equals(object);
+        }
+    };
+    */
 }
